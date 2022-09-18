@@ -62,7 +62,7 @@ export const storedAlgs = {
 	UBL: "(U2) R' U' F' U F R",
 	LD: "(U') R U R' U R' F R F' U2' R' F R F'",
 	TRB: "(U2) F' L F L' U' L' U' L U L' U L",
-	HBL: "// same as #HBR",
+	HBL: "// same as #HFR",
 	SBL: "M R U R' U R U2' R' U M'",
 	AFL: "r U2' R' U' R U' r'",
 	LFL: "(U) R U2' R2' F R F' R U2' R'",

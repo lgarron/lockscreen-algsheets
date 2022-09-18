@@ -55,42 +55,39 @@ function addAlgSheet(coName: string): void {
 			// experimentalSetupAnchor: "end",
 			alg: algInfo.setupAlg,
 		});
+
+		let algTD: HTMLDivElement;
+		let playerTD: HTMLDivElement;
+		let hashOLLTextWrapper: HTMLDivElement;
 		if (activeRow) {
-			const algTD = activeRow.appendChild(document.createElement("div"));
-			algTD.classList.add("alg", "right");
-			algTD.textContent = algInfo.alg;
-			const playerTD = activeRow.appendChild(document.createElement("div"));
-			// const playerWrapper = playerTD.appendChild(
-			// 	document.createElement("twisty-player-wrapper"),
-			// );
-			playerTD.appendChild(player);
-			// const hashOLLTD = activeRow.appendChild(document.createElement("div"));
-			const hashOLLTextWrapper = activeRow.appendChild(
-				document.createElement("div"),
-			);
-			hashOLLTextWrapper.classList.add("hash-oll");
-			hashOLLTextWrapper.textContent = `#${algInfo.hashOLLName}`;
+			algTD = activeRow.appendChild(document.createElement("div"));
+			algTD.classList.add("right");
+			playerTD = activeRow.appendChild(document.createElement("div"));
+			hashOLLTextWrapper = activeRow.appendChild(document.createElement("div"));
 			activeRow = null;
 		} else {
 			const activeRoww = grid; // table.appendChild(document.createElement("tr"));
 			activeRow = activeRoww;
-			// const hashOLLTD = activeRow.appendChild(document.createElement("div"));
-			const hashOLLTextWrapper = activeRoww.appendChild(
+			hashOLLTextWrapper = activeRoww.appendChild(
 				document.createElement("div"),
 			);
-			hashOLLTextWrapper.classList.add("hash-oll");
 			hashOLLTextWrapper.classList.add("cw");
-			hashOLLTextWrapper.textContent = `#${algInfo.hashOLLName}`;
-
-			const playerTD = activeRoww.appendChild(document.createElement("div"));
-			// const playerWrapper = playerTD.appendChild(
-			// 	document.createElement("twisty-player-wrapper"),
-			// );
-			playerTD.appendChild(player);
-			const algTD = activeRoww.appendChild(document.createElement("div"));
-			algTD.classList.add("alg");
-			algTD.textContent = algInfo.alg;
+			playerTD = activeRoww.appendChild(document.createElement("div"));
+			algTD = activeRoww.appendChild(document.createElement("div"));
 		}
+
+		algTD.classList.add("alg");
+		algTD.textContent = algInfo.alg;
+		if (algInfo.alg.length < 25) {
+			algTD.classList.add("very-short");
+		} else if (algInfo.alg.length < 40) {
+			algTD.classList.add("short");
+		}
+
+		playerTD.appendChild(player);
+
+		hashOLLTextWrapper.classList.add("hash-oll");
+		hashOLLTextWrapper.textContent = `#${algInfo.hashOLLName}`;
 		// const algCase = algSheet.appendChild(document.createElement("alg-case"));
 		// const twistyPlayerWrapper = algCase.appendChild(
 		// 	document.createElement("twisty-player-wrapper"),

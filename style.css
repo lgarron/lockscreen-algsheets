@@ -31,7 +31,8 @@ alg-sheet {
   text-align: center;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  opacity: 0.3;
+  /* opacity: 0.3; */
+  color: rgba(255, 255, 0, 0.5);
   font-size: 32px;
 }
 
@@ -48,7 +49,6 @@ twisty-player {
 
 .alg {
   font-size: 38px;
-  padding: 12px 10px 10px 10px;
   box-sizing: border-box;
 }
 
@@ -58,5 +58,29 @@ twisty-player {
 
 .right {
   text-align: right;
+}
+
+
+.alg {
   padding: 12px 10px 10px 10px;
+}
+
+.right {
+  padding: 12px 10px 10px 10px;
+}
+
+.alg.short {
+  padding: 12px 50px 10px 10px;
+}
+
+.right.short {
+  padding: 12px 10px 10px 50px;
+}
+
+.alg.very-short {
+  padding: 12px 80px 10px 10px;
+}
+
+.right.very-short {
+  padding: 12px 10px 10px 80px;
 }

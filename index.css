@@ -85,6 +85,10 @@ alg-sheet {
   padding: 12px 10px 10px 80px;
 }
 
+.same-as {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 alg-sheet {
   gap: 50px;
 }

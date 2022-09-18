@@ -1,6 +1,6 @@
 import { Alg } from "cubing/alg";
 import { TwistyPlayer, TwistyPlayerConfig } from "cubing/twisty";
-import { algHelpers, data } from "./data";
+import { algHelpers, data, storedAlgs } from "./data";
 
 function getConfig(configName?: string): TwistyPlayerConfig {
 	if (!configName) {
@@ -30,8 +30,9 @@ function algs(coName: string): AlgInfo[] {
 	const algInfos: AlgInfo[] = [];
 	for (const eoName of Object.keys(algHelpers.EDGES)) {
 		const hashOLLName = coName + eoName;
-		const alg = localStorage[hashOLLName];
-		const setupAlg = algHelpers.CORNERS[coName] + algHelpers.EDGES[eoName];
+		const alg = storedAlgs[hashOLLName]; // TODO: localstorigify
+		const setupAlg = `${algHelpers.CORNERS[coName]} ${algHelpers.EDGES[eoName]}`;
+		console.log(hashOLLName, setupAlg);
 		algInfos.push({
 			hashOLLName,
 			alg,
@@ -48,6 +49,7 @@ function addAlgSheet(coName: string): void {
 	const algSheet = document.body.appendChild(
 		document.createElement("alg-sheet"),
 	);
+	algSheet.id = coName;
 	const grid = algSheet.appendChild(document.createElement("table"));
 	grid.classList.add("table");
 	for (const algInfo of algs(coName)) {
@@ -84,6 +86,9 @@ function addAlgSheet(coName: string): void {
 		} else if (algInfo.alg.length < 40) {
 			algTD.classList.add("short");
 		}
+		if (algInfo.alg.startsWith("// same as")) {
+			algTD.classList.add("same-as");
+		}
 
 		playerTD.appendChild(player);
 
@@ -105,7 +110,7 @@ function addAlgSheet(coName: string): void {
 			background: "none",
 			visualization: "experimental-2D-LL",
 			experimentalStickering: "OLL",
-			alg: Alg.fromString(algHelpers["CORNERS"][coName]).invert(),
+			alg: Alg.fromString(algHelpers["CORNERS"][coName]),
 		}),
 	);
 	bigPlayer.classList.add("big-player");

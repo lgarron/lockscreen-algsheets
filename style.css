@@ -42,7 +42,7 @@ alg-sheet {
   transform: rotate(180deg);
 }
 
-twisty-player {
+.table twisty-player {
   width: 160px !important;
   height: 160px;
 }
@@ -83,4 +83,14 @@ twisty-player {
 
 .right.very-short {
   padding: 12px 10px 10px 80px;
+}
+
+alg-sheet {
+  gap: 50px;
+}
+
+.big-player {
+  width: 500px;
+  height: 500px;
+  margin: auto;
 }

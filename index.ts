@@ -1,3 +1,4 @@
+import { Alg } from "cubing/alg";
 import { TwistyPlayer, TwistyPlayerConfig } from "cubing/twisty";
 import { algHelpers, data } from "./data";
 
@@ -97,6 +98,17 @@ function addAlgSheet(coName: string): void {
 		// );
 		// algCase.append(alg);
 	}
+
+	const bigPlayer = algSheet.appendChild(
+		new TwistyPlayer({
+			controlPanel: "none",
+			background: "none",
+			visualization: "experimental-2D-LL",
+			experimentalStickering: "OLL",
+			alg: Alg.fromString(algHelpers["CORNERS"][coName]).invert(),
+		}),
+	);
+	bigPlayer.classList.add("big-player");
 }
 
 for (const coName of Object.keys(algHelpers.CORNERS)) {

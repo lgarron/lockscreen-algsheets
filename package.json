@@ -10,6 +10,7 @@
   "author": "lgarron <code@garron.net>",
   "license": "MIT",
   "devDependencies": {
+    "playwright": "^1.25.2",
     "vite": "^3.1.0"
   },
   "dependencies": {

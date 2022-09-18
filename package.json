@@ -1,0 +1,18 @@
+{
+  "name": "lockscreen-algsheets",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "lgarron <code@garron.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^3.1.0"
+  },
+  "dependencies": {
+    "cubing": "^0.29.1"
+  }
+}

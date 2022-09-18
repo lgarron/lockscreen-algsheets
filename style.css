@@ -8,52 +8,55 @@ alg-sheet {
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.8);
   display: grid;
-  padding: 630px 40px 780px;
+  padding: 630px 16px 780px;
   /* gap: 20px;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 1fr);
   contain: content; */
 }
 
-table {
+.table {
   font-family: "Ubuntu", Tahoma, sans-serif;
-  font-size: 4 0px;
   color: white;
+
+  display: grid;
+  grid-template-columns: 32px 160px 272px 272px 160px 32px;
 }
 
-table td {
-  width: 25%;
-  contain: content;
-  overflow: hidden;
+.table>* {
+  height: 160px;
 }
 
-table td:nth-child(2) {
-  width: 50%;
+.table .hash-oll {
+  text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  opacity: 0.3;
+  font-size: 32px;
 }
 
-/* alg-case {
-  contain: content;
-  overflow: hidden
-}
-
-twisty-player-wrapper {
-  contain: content;
-  overflow: hidden
+.table .hash-oll.cw {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  transform: rotate(180deg);
 }
 
 twisty-player {
-  contain: content;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-} */
-
-twisty-player {
-  display: inline-grid;
-  width: 200px;
+  width: 160px !important;
+  height: 160px;
 }
 
-twisty-player-wrapper {
-  contain: content;
-  overflow: hidden;
+.alg {
+  font-size: 38px;
+  padding: 12px 10px;
+  box-sizing: border-box;
+}
+
+.alg:not(.right) {
+  border-right: 2px solid white;
+}
+
+.right {
+  text-align: right;
+  ;
 }

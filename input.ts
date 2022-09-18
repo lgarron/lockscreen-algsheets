@@ -4,6 +4,7 @@ import { KState } from "cubing/kpuzzle";
 import { cube3x3x3 } from "cubing/puzzles";
 import "cubing/twisty";
 import { TwistyAlgViewer, TwistyPlayer } from "cubing/twisty";
+import { algHelpers } from "./data";
 
 const player = document.body.appendChild(
 	new TwistyPlayer({
@@ -49,29 +50,6 @@ document.body.appendChild(document.createElement("br"));
 document.body.appendChild(new TwistyAlgViewer({ twistyPlayer: player }));
 document.body.appendChild(document.createElement("br"));
 document.body.appendChild(document.createElement("br"));
-
-const algHelpers = {
-	CORNERS: {
-		O: "",
-		H: "U R U2' R' U' R U R' U' R U' R' U'",
-		S: "R U2' R' U' R U' R'",
-		A: "R U R' U R U2 R'",
-		L: "U' R U2' R' U' R U R' U' R U R' U' R U' R' U",
-		P: "B U2 B2 U' B2 U' B2 U2' B",
-		U: "U U R U R' U R U2' R' L' U' L U' L' U2 L U' U' U'",
-		T: "U2 L' U2' L U L' U L R U2 R' U' R U' R' U' U2",
-	},
-	EDGES: {
-		O: "",
-		D: "U M' U' R' U' R U M2' U' R' U M' R",
-		FB: "r U R' U' M U R U' R'",
-		RL: "U' r U R' U' M U R U' R' U",
-		FR: "R U R' U' M' U R U' r'",
-		RB: "U R U R' U' M' U R U' r' U'",
-		BL: "U2 R U R' U' M' U R U' r' U2",
-		FL: "U' R U R' U' M' U R U' r' U",
-	},
-};
 
 function toOriHash(t: KState) {
 	let hash = "C:";

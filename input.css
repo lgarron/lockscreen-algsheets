@@ -1,7 +1,16 @@
+body {
+  font-family: Ubuntu, Tahoma, sans-serif;
+}
+
 table {
   border-collapse: collapse;
 }
 
 table td {
   border: 1px solid black;
+  padding: 4px;
+}
+
+twisty-player {
+  display: inline-grid;
 }
